@@ -1,7 +1,7 @@
 # SZ-Novel AI 深度学习型长篇小说专家
 
+[![中文](https://img.shields.io/badge/中文-README-red)](README.md) [![English](https://img.shields.io/badge/English-README-green)](README_EN.md)
 [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com)
-[![Language](https://img.shields.io/badge/language-Chinese-red.svg)](https://github.com)
 [![Quality](https://img.shields.io/badge/quality-★★★-green.svg)](https://github.com)
 
 ## 📖 项目简介
@@ -38,7 +38,66 @@
    ```
    系统将自动扫描项目目录，读取上次创作内容并接续写作
 
-## 📋 工作流程
+## �️ 安装与使用
+
+### 在 Claude Code 中安装
+
+1. **下载技能文件**：
+   ```bash
+   git clone https://github.com/your-repo/sz-novel.git
+   cd sz-novel
+   ```
+
+2. **复制到 Claude Code 技能目录**：
+   ```bash
+   cp SKILL.md ~/.claude/skills/sz-novel/
+   ```
+
+3. **激活技能**：
+   在 Claude Code 中输入：
+   ```
+   /sz-novel
+   ```
+
+### 在 OpenCode 中安装
+
+1. **下载技能文件**：
+   ```bash
+   git clone https://github.com/your-repo/sz-novel.git
+   ```
+
+2. **安装到技能目录**：
+   ```bash
+   cp SKILL.md ~/opencode/skills/
+   ```
+
+3. **使用快捷命令**：
+   ```
+   /novel
+   ```
+
+### 在 Codex 中安装
+
+1. **导入技能**：
+   ```bash
+   codex skill import https://github.com/your-repo/sz-novel/SKILL.md
+   ```
+
+2. **快捷命令**：
+   ```
+   @sz-novel write chapter
+   ```
+
+### 快捷命令参考
+
+| 命令        | 功能              | 示例        |
+| ----------- | ----------------- | ----------- |
+| `/sz-novel` | 启动小说创作技能  | `/sz-novel` |
+| `继续创作`  | 继续上次创作      | `继续创作`  |
+| `新建创作`  | 开始新小说        | `新建创作`  |
+| `/novel`    | OpenCode 快捷启动 | `/novel`    |
+
+## �📋 工作流程
 
 ### 🔄 新建创作模式
 

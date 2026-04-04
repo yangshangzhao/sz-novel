@@ -1,7 +1,7 @@
 # SZ-Novel AI Deep Learning Long-Form Novel Expert
 
+[![中文](https://img.shields.io/badge/中文-README-red)](README.md) [![English](https://img.shields.io/badge/English-README-green)](README_EN.md)
 [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com)
-[![Language](https://img.shields.io/badge/language-English-green.svg)](https://github.com)
 [![Quality](https://img.shields.io/badge/quality-★★★-green.svg)](https://github.com)
 
 ## 📖 Project Introduction
@@ -38,7 +38,66 @@
    ```
    The system will automatically scan the project directory, read the last creation content, and continue writing
 
-## 📋 Workflow
+## �️ Installation and Usage
+
+### Installation in Claude Code
+
+1. **Download skill files**:
+   ```bash
+   git clone https://github.com/your-repo/sz-novel.git
+   cd sz-novel
+   ```
+
+2. **Copy to Claude Code skills directory**:
+   ```bash
+   cp SKILL.md ~/.claude/skills/sz-novel/
+   ```
+
+3. **Activate skill**:
+   In Claude Code, enter:
+   ```
+   /sz-novel
+   ```
+
+### Installation in OpenCode
+
+1. **Download skill files**:
+   ```bash
+   git clone https://github.com/your-repo/sz-novel.git
+   ```
+
+2. **Install to skills directory**:
+   ```bash
+   cp SKILL.md ~/opencode/skills/
+   ```
+
+3. **Use shortcut command**:
+   ```
+   /novel
+   ```
+
+### Installation in Codex
+
+1. **Import skill**:
+   ```bash
+   codex skill import https://github.com/your-repo/sz-novel/SKILL.md
+   ```
+
+2. **Shortcut commands**:
+   ```
+   @sz-novel write chapter
+   ```
+
+### Shortcut Commands Reference
+
+| Command             | Function                    | Example             |
+| ------------------- | --------------------------- | ------------------- |
+| `/sz-novel`         | Launch novel creation skill | `/sz-novel`         |
+| `Continue creation` | Continue last creation      | `Continue creation` |
+| `New creation`      | Start new novel             | `New creation`      |
+| `/novel`            | OpenCode quick launch       | `/novel`            |
+
+## �📋 Workflow
 
 ### 🔄 New Creation Mode
 
