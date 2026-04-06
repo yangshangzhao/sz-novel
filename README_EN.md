@@ -1,242 +1,123 @@
 # SZ-Novel AI Deep Learning Long-Form Novel Expert
 
 [![中文](https://img.shields.io/badge/中文-README-red)](README.md) [![English](https://img.shields.io/badge/English-README-green)](README_EN.md)
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com)
-[![Quality](https://img.shields.io/badge/quality-★★★-green.svg)](https://github.com)
 
-## 📖 Project Introduction
+## 📖 Project Overview
 
-**SZ-Novel** is a deep learning-based long-form novel creation expert system powered by Claude AI. It adopts an innovative "learn first, write later" working paradigm, supporting multi-volume, multi-chapter long-form novel creation, automatically ensuring story coherence and quality standards.
+**SZ-Novel** is a deep-learning novel writing assistant designed for long-form fiction. It uses a "learn first, write later" approach to extract writing style, character logic, and world-building rules from reference material, then generate coherent, high-quality, pure Chinese chapters.
 
-### 🎯 Core Features
+## 🎯 Key Features
 
-- **Intelligent Learning System**: Deep learning from reference materials to master writing style, character logic, and world-building settings
-- **Pure Chinese Creation**: Zero tolerance for non-Chinese content, ensuring language purity
-- **Quality Assurance System**: 6-dimensional quality checks + real-time error correction mechanism
-- **Coherence Guarantee**: Prevents chapter omissions, setting drift, and character inconsistencies
-- **De-AI Processing**: 5 anti-detection strategies to avoid recognition by AI detection tools
-- **Automated Persistence**: Intelligent file management, automatic saving by volume and chapter
+- Smart learning from reference content
+- Pure Chinese output with zero tolerance for non-Chinese elements
+- Real-time multi-dimensional quality checks
+- Chapter continuity and gap filling
+- De-AI writing strategies based on `DEAIFY.md`
+- Automatic file persistence and chapter management
 
-## 🚀 Quick Start
+## 🚀 How to Use
 
-### Environment Requirements
+### New Creation
+Start writing directly to enter new creation mode.
 
-- Claude AI environment
-- Project root directory permissions
-- Reference materials directory (optional)
+### Continue Creation
+Send `Continue creation` to enter continue mode. The system will scan the project directory, load the latest chapter, and continue writing.
 
-### Basic Usage
+## 🔧 Workflow
 
-1. **New Creation**:
-   ```
-   Start creating directly, the system will automatically enter new creation mode
-   ```
+### 0. Startup Detection and Mode Selection
 
-2. **Continue Creation**:
-   ```
-   Continue creation
-   ```
-   The system will automatically scan the project directory, read the last creation content, and continue writing
+- If the input contains "Continue creation", enter continue mode.
+- Otherwise, enter new creation mode.
 
-## �️ Installation and Usage
+### Continue Creation Mode
 
-### Installation in Claude Code
+- Scan the project root for the latest `.txt` chapter file
+- Extract last chapter number, scene, characters, foreshadowing, and timeline
+- If no issues are found, continue writing immediately
+- If missing chapters, wrong sequence, or file issues are detected, repair them first
 
-1. **Download skill files**:
-   ```bash
-   git clone https://github.com/your-repo/sz-novel.git
-   cd sz-novel
-   ```
+### New Creation Mode
 
-2. **Copy to Claude Code skills directory**:
-   ```bash
-   cp SKILL.md ~/.claude/skills/sz-novel/
-   ```
+1. Environment Scan: verify `references/` directory and assess available reference files
+2. Learning Phase: analyze reference material style, pacing, character logic, and world rules
+3. Content Creation: generate chapters according to the writing standard
+4. Persistence: perform final checks and save the chapter
 
-3. **Activate skill**:
-   In Claude Code, enter:
-   ```
-   /sz-novel
-   ```
+## ✅ Writing Rules
 
-### Installation in OpenCode
-
-1. **Download skill files**:
-   ```bash
-   git clone https://github.com/your-repo/sz-novel.git
-   ```
-
-2. **Install to skills directory**:
-   ```bash
-   cp SKILL.md ~/opencode/skills/
-   ```
-
-3. **Use shortcut command**:
-   ```
-   /novel
-   ```
-
-### Installation in Codex
-
-1. **Import skill**:
-   ```bash
-   codex skill import https://github.com/your-repo/sz-novel/SKILL.md
-   ```
-
-2. **Shortcut commands**:
-   ```
-   @sz-novel write chapter
-   ```
-
-### Shortcut Commands Reference
-
-| Command             | Function                    | Example             |
-| ------------------- | --------------------------- | ------------------- |
-| `/sz-novel`         | Launch novel creation skill | `/sz-novel`         |
-| `Continue creation` | Continue last creation      | `Continue creation` |
-| `New creation`      | Start new novel             | `New creation`      |
-| `/novel`            | OpenCode quick launch       | `/novel`            |
-
-## �📋 Workflow
-
-### 🔄 New Creation Mode
-
-1. **Environment Scanning** → Verify reference materials directory
-2. **Deep Learning** → Analyze reference materials style
-3. **Content Creation** → Generate high-quality chapters
-4. **Automated Persistence** → Intelligent file saving
-
-### 🔄 Continue Creation Mode
-
-1. **Context Retrieval** → Scan project directory to read previous content
-2. **Context Learning** → Extract character, setting, and foreshadowing information
-3. **Coherence Assurance** → Ensure new chapters seamlessly connect with previous content
-4. **Exception Repair** → Automatically fill in missing chapters
+- Chapter length: 2000–4000 Chinese characters
+- Confirm chapter sequence before writing
+- Do not skip chapter numbers
+- Real-time checks every 50 characters
+- Fix issues immediately and continue writing
+- Do not stop at a seemingly complete point
+- If missing chapters are found, fill them before saving
 
 ## 📊 Quality Standards
 
-### 6-Dimensional Quality Check System
+### 6 Dimensions of Quality Checking
 
-#### 📖 Dimension 1: Story Clarity and Pacing
-- ✅ Clear main storyline, explicit story progression
-- ✅ Balanced pacing with alternating tension and relaxation
-- ✅ Reasonable suspense and foreshadowing layout, no "bury without reveal"
+1. Story clarity and pacing
+2. Character consistency and growth
+3. Internal world consistency
+4. Intelligence and conflict rationality
+5. Basic information consistency
+6. Cause-and-effect logic
 
-#### 👥 Dimension 2: Character Consistency and Development
-- ✅ Character actions align with personality, background, and motivations
-- ✅ Reasonable and dynamic character relationships
-- ✅ Complete and believable protagonist growth arc
+### De-AI Strategies
 
-#### 🌍 Dimension 3: Internal Consistency
-- ✅ Strict adherence to world-building rules
-- ✅ No contradictions (e.g., "exhausting true qi leads to death" but character survives unscathed)
-- ✅ Consistent logic for special mechanisms (magic, time travel, technology)
-
-#### 🧠 Dimension 4: Character Intelligence and Conflict Rationality
-- ✅ Antagonists are sufficiently powerful and intelligent, posing real threats
-- ✅ Protagonist victory based on effort and wisdom, not plot armor or deus ex machina
-- ✅ All conflicts have reasonable cause and effect
-
-#### 📝 Dimension 5: Basic Information Consistency
-- ✅ Unified character information (eye color, family background, etc.)
-- ✅ Accurate timeline (yesterday was Monday, today can't be Wednesday)
-- ✅ Consistent location and scene descriptions
-
-#### 🔗 Dimension 6: Causality Rationality
-- ✅ Major plot twists have sufficient internal reasons and external catalysts
-- ✅ Character decisions based on current information and personality
-- ✅ No unexplained position changes
-
-### 🛡️ De-AI Strategies
-
-- ✅ **Invalid Details**: Insert irrelevant trivial information
-- ✅ **Logic Jumps**: Occasional awkward scene transitions
-- ✅ **Emotional Rough Edges**: Incomplete or uncertain emotional expressions
-- ✅ **Deliberate Rule-Breaking**: Break perfect parallelism, awkward word combinations
-- ✅ **Personal Quirks**: Catchphrases, unconventional aesthetic perspectives
+- Add irrelevant detail and environment texture
+- Introduce logic jumps and emotional roughness
+- Avoid neat parallelism, emotional label verbs, and overly perfect conclusions
+- Add character quirks and imperfect expressions
+- Use `DEAIFY.md` for guidance
 
 ## 📁 File Structure
 
 ```
 sz-novel/
-├── SKILL.md              # Core skill specification document
-├── README.md             # Project description document (this file)
-├── README_EN.md          # English version of README
-├── references/           # Reference materials directory
-│   ├── Ming Dynasty Stories.epub    # Example novel file
-│   ├── Grave Robbery Notes.txt      # Style reference materials
-│   └── ...              # Other reference files
-├── assets/               # Resource files directory
-└── scripts/              # Auxiliary scripts directory
+├── SKILL.md
+├── README.md
+├── README_EN.md
+├── DEAIFY.md
+├── assets/
+├── references/
+└── scripts/
 ```
 
-### Output File Format
-
-- **File Name Format**: `[Volume Name]_Chapter X_[Chapter Title].txt`
-- **Pure Chinese Naming**: Volume names and titles must use pure Chinese
-- **Automatic Serial Number Management**: Ensure 100% chapter continuity
-
-## ⚙️ Technical Specifications
-
-### Creation Parameters
-
-| Parameter             | Specification                 |
-| --------------------- | ----------------------------- |
-| Chapter Length        | 2000～4000 characters         |
-| Book Scale            | 10～30 chapters/volume        |
-| Language Requirements | Pure Chinese (zero tolerance) |
-| Save Format           | UTF-8 text file               |
-
-### Quality Control
-
-- **Real-time Scanning**: Automatic check every 50 characters
-- **Auto Correction**: Immediate correction upon issue detection
-- **Triple Verification**: Generation → Completion → Pre-save verification
-- **Zero Tolerance Policy**: Any quality issues must be resolved before saving
-
-## 🔧 Advanced Features
-
-### Chapter Serial Number Management
-
-The system adopts an **absolute zero tolerance** serial number management mechanism:
-
-```
-Existing chapters: 1, 2, 3, 5, 6, 8, 9
-↓
-Missing detection: Missing chapters 4 and 7 detected
-↓
-Auto completion: Generate chapter 4 first, then chapter 7
-↓
-Quality verification: Complete checks for each completed chapter
-↓
-Continuity confirmation: Re-verify serial number completeness after all completions
-```
-
-### Context Continuation
-
-**Continue Creation Mode** automatically executes:
-- 📖 Scan project directory to read previous content
-- 🧠 Extract key information (characters, settings, foreshadowing)
-- 🔗 Ensure new chapters seamlessly connect
-- ⚡ Exception repair (fill in missing chapters)
+- Recommended output filename: `[Volume Name]_第X章_[Chapter Title].txt`
+- Filenames and titles must be pure Chinese
+- Automatic chapter number management ensures no missing chapters
 
 ## ⚠️ Important Notes
 
 ### Prohibited Items
 
-- ❌ **Non-Chinese Content**: Any English or other language mixing
-- ❌ **Missing Chapters**: Cannot skip any planned chapters
-- ❌ **Setting Drift**: Character and world-building contradictions
-- ❌ **Obvious AI Characteristics**: Overly perfect parallelism, antithesis
-- ❌ **Meta Narrative Comments**: Author voice intruding into the story
-- ❌ **Forgotten Foreshadowing**: Suspense that is buried but never revealed
+- Any non-Chinese text
+- Missing or skipped chapter numbers
+- Setting drift or character inconsistency
+- Obvious AI writing patterns
+- Meta-narrative commentary or reader-facing expressions
+- Foreshadowing that is never resolved
 
-### Best Practices
+### Recommended Practices
 
-- 📚 **Prepare Reference Materials**: Place in `references/` directory for learning
-- 🔄 **Batch Creation**: Recommend completing 1-3 chapters at a time for coherence
-- ✅ **Quality Confirmation**: Carefully check quality reports before each save
-- 📝 **Pure Chinese Environment**: Ensure all input and output are pure Chinese
+- Prepare reference material before writing
+- Write 1–3 chapters at a time for coherence
+- Review previous chapters regularly for consistency
+- Perform full quality checks after each chapter
+
+## 📈 Verification Process
+
+1. Real-time checks every 50 characters
+2. Chapter-level quality validation
+3. Cross-chapter continuity review
+4. Final save confirmation
+
+## 🤝 Contribution
+
+Contributions are welcome for improving process, quality rules, and de-AI strategies.
 
 ## 📈 Quality Assurance
 
